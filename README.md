@@ -11,3 +11,9 @@ Goals:
   - Government LISA bonus
   - Withdrawal penalties (if applicable)
   - Custom penalty function based on probability of emigrating
+
+![Alt text](images/money_over_years.png)
+
+![Alt text](images/total_money_vs_ratio_split.png)
+
+![Alt text](images/ideal_ratio_vs_emigration_chance.png)
