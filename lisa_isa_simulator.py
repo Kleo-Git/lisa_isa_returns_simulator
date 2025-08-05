@@ -59,9 +59,10 @@ def plot_total_money_vs_ratio(results, ratio_lisa_isa, num_years, corrected_resu
         x.append(ratio_lisa_isa[i])
         y.append(results[i][-1])
     plt.plot(x,y)
-    plt.title(f"Total money after {num_years} years based on split between lisa and isa")
+    plt.title(f"Total money after {num_years} years based on ratio split")
     plt.xlabel("Ratio of money split")
     plt.ylabel("Total Amount of Money (£)")
+    plt.savefig("images/total_money_vs_ratio_split.png")
     plt.show()
 
 def find_best_ratio(results, ratio_lisa_isa, corrected_results=0, print_reuslt=0):
@@ -85,11 +86,12 @@ def plot_money_over_years(results, ratio_lisa_isa, num_years, corrected_results=
         for t in range(num_years):
             x.append(t+1)
             y.append(results[i][t])
-        plt.plot(x,y, label = f"Ratio LISA to ISA: {ratio_lisa_isa[i]:.1f}")
+        plt.plot(x,y, label = f"Ratio LISA to ISA: {ratio_lisa_isa[i]:.2f}")
     plt.legend()
     plt.xlabel("Number years")
     plt.ylabel("Total Amount of Money (£)")
-    plt.title("Total money after number of years based on lisa, isa contribution")
+    plt.title("Money per year")
+    plt.savefig("images/money_over_years.png")
     plt.show()
 
 def penalty_function(x, central_point=20000, max_value=0.5, scale=2000):
@@ -105,19 +107,25 @@ num_years = 5
 interest_rate = 1.1
 total_money_to_invest = 10000
 lisa_cap = 4000
-ratio_lisa_isa = np.arange(0,0.4001,0.001)
+ratio_lisa_isa = np.arange(0,0.41,0.1)
 
+results = results_over_years(num_years, interest_rate, total_money_to_invest, ratio_lisa_isa, lisa_cap)
+plot_money_over_years(results, ratio_lisa_isa, num_years)
+plot_total_money_vs_ratio(results, ratio_lisa_isa, num_years)
+
+ratio_lisa_isa = np.arange(0,0.4001,0.001)
 emigration_probs = np.arange(0,1.01,0.01)
 best_ratios = []
 for i in range(len(emigration_probs)):
     results = results_over_years(num_years, interest_rate, total_money_to_invest, ratio_lisa_isa, lisa_cap, emigration_probs[i])
     best_ratios.append(find_best_ratio(results, ratio_lisa_isa, 1, 0))
 
+
 plt.title("Best ratio vs emigration chance")
 plt.xlabel("Emigration Chance")
 plt.ylabel("Best ratio")
 plt.plot(emigration_probs, best_ratios)
+plt.savefig("images/ideal_ratio_vs_emigration_chance.png")
 plt.show()
-
 
 
