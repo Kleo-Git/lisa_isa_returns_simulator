@@ -39,7 +39,7 @@ max_value = The max value the graph tends to, (0.5 by default) representing a 50
 central_point = The centre of the sigmoid graph, the x position where the graph reaches half the max_value (0.25 by default).
 scale = The steepness of the ramp, useful when using the sigmoid function for very large values, like 20,000.
 
-![Alt text](penalty_functin_centred_at_0.png)
+![Alt text](images/penalty_functin_centred_at_0.png)
 
 The following graph shows how the total 'effective' (money after being penalized) money varies across the 5 years, a max contribution to the LISA would be best performing with no penalty function applied, however in this case we are applying the penalty. For an emigration probabilty of 50%, this graph shows interestingly, that neither a 0.0 ratio nor a max ratio of 0.4 achieve the optimal results, the optimal distribution given oursetup is found to be 0.2, implying the ideal split yearly is 8,000 ISA and 2,000 LISA. This makes sense given the penalty function, since we know that with no penalty the LISA contributions are better, and this is found to be the optimal amount since we maximize the LISA bonus, whilst minimizing the penalty. The LISA account is not reaching near the centre of the penalty function, so the penalty remains low.
 
@@ -59,10 +59,10 @@ The following graph shows blocks of ratios for a given emigration probability. W
 
 Now we can see the average results for each of these 'blocks', this graph shows how the average value smoothly spreads out based on emigration probability.The value of the lines correspond exactly to the lower probabilities, e.g. lower emigration probability -> higher total value.
 
-![Alt text](average_tvmr_blocks.png)
+![Alt text](images/average_tvmr_blocks.png)
 
 Lastly, we have a heatmap for ratio vs emigration probability. The optimal path here corresponds exactly to our previous ratio, emigration graph. The brightest yellow regions show the areas with the highest portfolio values, this graph helps to see how the total value drops off significantly if we tried to use higher LISA ratios at higher emigration probabilties.
 
-![Alt text](portfolio_heatmap.png)
+![Alt text](images/portfolio_heatmap.png)
 
 
