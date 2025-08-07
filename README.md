@@ -30,6 +30,14 @@ Graphs and Visualizations:
 The project offers multiple plotting functions to analyze and visualize investment strategies and outcomes.
 
 Penalty Function:
+The equation of the penalty function is defined as 1-P(x) where:
+  x = total balance at withdrawal
+  P(x) = max_value * σ((central_point - x) / scale)
+  σ(z) = 1 / (1+e^(-z))
+
+max_value = The max value the graph tends to, (0.5 by default) representing a 50% hit to the total balance.
+central_point = The centre of the sigmoid graph, the x position where the graph reaches half the max_value (0.25 by default).
+scale = The steepness of the ramp, useful when using the sigmoid function for very large values, like 20,000.
 
 ![Alt text](penalty_functin_centred_at_0.png)
 
