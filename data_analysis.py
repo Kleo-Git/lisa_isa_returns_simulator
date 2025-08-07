@@ -202,7 +202,7 @@ class Visual_Analysis(Portfolio):
     
         plt.show()
         
-    def plot_average_tvmr_blocks(self, num_years, num_ratios_per_block, num_em_probs_to_plot, show_optimal_path=True, save_fig=False):
+    def plot_average_tvmr_blocks(self, num_years, num_ratios_per_block, num_em_probs_to_plot, save_fig=False):
         """
         Plot average total money over time for blocks of LISA ratios aggregated by emigration probabilities.
     
