@@ -148,10 +148,10 @@ def optimize_portfolio(yearly_investment, interest_rate, num_years, lisa_ratios,
 
 
 
-lisa_ratios = np.arange(0,0.401,0.01)
-emigration_probs = np.arange(0,1.01,0.01)
+#lisa_ratios = np.arange(0,0.401,0.01)
+#emigration_probs = np.arange(0,1.01,0.01)
 
-y = optimize_portfolio(10000, 1.1, 5, lisa_ratios, emigration_probs)
+#y = optimize_portfolio(10000, 1.1, 5, lisa_ratios, emigration_probs)
 
-plt.plot(emigration_probs, y)
-plt.show()
+#plt.plot(emigration_probs, y)
+#plt.show()
